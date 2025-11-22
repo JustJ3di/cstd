@@ -26,7 +26,7 @@
 }
 
 #define vpop_back(vect)  { \
-	if((v)->size > 0){	\	
+	if((v)->size > 0) {	\
 		(v)->size--;	\
 	}	\
 }

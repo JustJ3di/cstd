@@ -3,11 +3,11 @@
 #define string_view const char *
 
 typedef struct {
-    int len;
+    unsigned long len;
     char *str;
 }str_view;
 
 
 
-#define make_string(value) #value
+#define to_string(value) #value
 

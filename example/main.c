@@ -17,6 +17,8 @@ int main(int argc, char const *argv[])
 
     printf("%d\n",st_size(st));
 
+    printf("%d\n",st_top(st));
+
 
     return 0;
 }
