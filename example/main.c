@@ -1,5 +1,6 @@
-#include "stack.h"
-#include "string_view.h"
+#include "stack/stack.h"
+#include "vector/vector.h"
+
 
 #include <stdio.h>
 
@@ -16,11 +17,6 @@ int main(int argc, char const *argv[])
 
     printf("%d\n",st_size(st));
 
-    str_view s = {4,"ciao"};
-
-    char *c = make_string(ciao);
-
-    string_view ss = "ciao";
 
     return 0;
 }
