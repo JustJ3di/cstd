@@ -22,7 +22,14 @@ int main(int argc, char const *argv[])
     min_st_push(st_min, 2);
     min_st_push(st_min, 10);
 
-    printf("%d",st_get_min(st_min));
+    printf("%d\n",st_get_min(st_min));
+
+    vector(int) arr;
+    vector_init(arr);
+
+    vpush_back(arr, 10);
+
+    printf("%d\n",v_at(arr,0));
 
 
     return 0;
