@@ -28,8 +28,14 @@ int main(int argc, char const *argv[])
     vector_init(arr);
 
     vpush_back(arr, 10);
+    vpush_back(arr, 10);
+    vpush_back(arr, 10);
+    vpush_back(arr, 10);
+    vpush_back(arr, 11);
 
-    printf("%d\n",v_at(arr,0));
+    printf("%d\n",v_at(arr,4));
+
+    vector_clear(arr);
 
 
     return 0;
