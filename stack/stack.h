@@ -31,6 +31,6 @@
     } \
     (st).i--;  \
 } while (0)
-#define min_st_at(i)
-#define min_st_size(st)
+#define min_st_at(i)((st).st[i])
+#define min_st_size(st)((st).i)
 #define st_get_min(st)((st).st_min[(st).i_min-1])
