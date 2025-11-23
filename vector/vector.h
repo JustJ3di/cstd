@@ -39,9 +39,9 @@
 	}	\
 }while(0)
 
-#define vbegin(vect) (&((vect).data[0]))
+#define vbegin(v) (&((v).data[0]))
 
-#define vend(vect) (&((vect).data[(vect).size]))
+#define vend(v) (&((v).data[(v).size]))
 
 #define vector_clear(v) do{ \
 	free((v).data); \
