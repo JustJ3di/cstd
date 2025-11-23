@@ -39,6 +39,10 @@
 	}	\
 }while(0)
 
+#define begin(vect) (&(vect)->data[0])
+
+#define end(vect) (&(vect)->data[size-1])
+
 #define vector_clear(v) do{ \
 	free((v).data); \
 	(v).data = NULL; \
