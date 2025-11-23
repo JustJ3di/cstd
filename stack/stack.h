@@ -9,18 +9,28 @@
 #define st_size(stack) ((stack).i)
 
 
-#define min_stack(type, size_max) struct{type st[size_max]; type st_min[size_max], unsigned i; unsigned i_min;}
-#define min_st_init(st)((st).i = 0; (st).i_min = 0)
-#define min_st_push(st,element) { \
-    if((st).i==0){  \
-        (st).st[(st).i++] = element;    \
-        (st).st_min[(st).i_min++] = element;    \
-    }else { \
-        if((st).st[(st).i-1] > element) (st).st_min[i_min++] = element;\
-        (st).st[(st).i++] = element;\
-    }   \
+#define min_stack(type, size_max) struct { \
+    type st[size_max];       \
+    type st_min[size_max];   \
+    unsigned int i;          \
+    unsigned int i_min;      \
 }
-#define min_st_pop(st)
+#define min_st_init(st) do { \
+    (st).i = 0; \
+    (st).i_min = 0; \
+} while (0)
+#define min_st_push(st, element) do { \
+    (st).st[(st).i++] = element; \
+    if (((st).i_min == 0) || (element <= (st).st_min[(st).i_min - 1])) { \
+        (st).st_min[(st).i_min++] = element; \
+    } \
+} while (0)
+#define min_st_pop(st) do { \
+    if ((st).st[(st).i - 1] == (st).st_min[(st).i_min - 1]) { \
+        (st).i_min--; \
+    } \
+    (st).i--;  \
+} while (0)
 #define min_st_at(i)
 #define min_st_size(st)
-#define st_get_min(st)(st_min[i_min-1])
+#define st_get_min(st)((st).st_min[(st).i_min-1])
