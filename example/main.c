@@ -11,9 +11,6 @@ int main(int argc, char const *argv[])
 
     st_push(st,1);
 
-    int  a = st_pop(st);
-
-    printf("%d\n",a);
 
     printf("%d\n",st_size(st));
 
