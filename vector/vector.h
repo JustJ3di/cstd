@@ -39,9 +39,9 @@
 	}	\
 }while(0)
 
-#define begin(vect) (&(vect)->data[0])
+#define vbegin(vect) (&((vect).data[0]))
 
-#define end(vect) (&(vect)->data[size-1])
+#define vend(vect) (&((vect).data[(vect).size]))
 
 #define vector_clear(v) do{ \
 	free((v).data); \
@@ -49,3 +49,6 @@
 	(v).capacity = 0; \
 	(v).size = 0; \
 }while(0)
+
+
+#define viterator(T) T*
