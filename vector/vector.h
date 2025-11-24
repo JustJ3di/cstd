@@ -8,6 +8,8 @@
 	size_t capacity; \
 }
 
+#define viterator(T) T*
+
 #define vector_init(vect)do{\
 	(vect).data = malloc(sizeof((vect).data[0])*2);	\
 	(vect).size = 0;\
@@ -66,4 +68,3 @@
 }while(0)
 
 
-#define viterator(T) T*
