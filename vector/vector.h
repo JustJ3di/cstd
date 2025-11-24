@@ -40,16 +40,17 @@
 }while(0)
 
 #define vinsert_at(v, index, element) do { \
-    if ((v).i >= (sizeof((v).st) / sizeof((v).st[0]))) { \
-        fprintf(stderr, "Error!\n"); \
-    } else if (index > (v).i) { \
-        fprintf(stderr, "Error!\n"); \
+    if ((index) > (v).size) { \
+        fprintf(stderr, "Error!"); \
     } else { \
-        for (unsigned int k = (v).i; k > index; k--) { \
-            (v).st[k] = (v).st[k - 1]; \
+        if ((v).size >= (v).capacity) { \
+            vector_resize(v, (v).capacity ? (v).capacity * 2 : 8); \
         } \
-        (v).st[index] = element; \
-        (v).i++; \
+        for (unsigned int k = (v).size; k > (index); k--) { \
+            (v).data[k] = (v).data[k - 1]; \
+        } \
+        (v).data[index] = (element); \
+        (v).size++; \
     } \
 } while(0)
 
