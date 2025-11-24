@@ -39,6 +39,20 @@
 	}	\
 }while(0)
 
+#define vinsert_at(v, index, element) do { \
+    if ((v).i >= (sizeof((v).st) / sizeof((v).st[0]))) { \
+        fprintf(stderr, "Error!\n"); \
+    } else if (index > (v).i) { \
+        fprintf(stderr, "Error!\n"); \
+    } else { \
+        for (unsigned int k = (v).i; k > index; k--) { \
+            (v).st[k] = (v).st[k - 1]; \
+        } \
+        (v).st[index] = element; \
+        (v).i++; \
+    } \
+} while(0)
+
 #define vbegin(v) (&((v).data[0]))
 
 #define vend(v) (&((v).data[(v).size]))
