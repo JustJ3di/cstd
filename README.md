@@ -1,1 +1,1 @@
-Standard library in c for personal use written in C .
+Standard library for personal use written in C .
