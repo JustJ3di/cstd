@@ -2,9 +2,10 @@
 
 #include <stddef.h>
 
+
 typedef struct node{
     void *p_data;
-    struct nodo *next;
+    struct node *next;
 }node;
 
 typedef struct flist{

@@ -1,6 +1,6 @@
 #include "stack/stack.h"
 #include "vector/vector.h"
-
+#include "forward_list/forward_list.h"
 
 #include <stdio.h>
 
@@ -41,8 +41,20 @@ int main(int argc, char const *argv[])
 
     vector_clear(arr);
 
+    flist l;
+
+    init(&l);
+
+    int a = 2;
+    int b = 4;
+    node n1 = {&a, NULL};
+    node n2 = {&b, NULL};
+    push(&l,&n1);
+
+    push(&l,&n2);
 
 
+    printf("%d\n",*(int *)l.head->p_data);
 
     return 0;
 }
