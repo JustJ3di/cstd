@@ -54,7 +54,11 @@ int main(int argc, char const *argv[])
     push(&l,&n2);
 
 
-    printf("%d\n",*(int *)l.head->p_data);
+    for (node *i = l.head; i; i = i->next)
+    {
+        printf("%d,",get_data(i, int));
+    }
+    
 
     return 0;
 }

@@ -3,10 +3,13 @@
 #include <stddef.h>
 
 
+#define get_data(node,type) *(type *)(node)->p_data
+
 typedef struct node{
     void *p_data;
     struct node *next;
 }node;
+
 
 typedef struct flist{
     node *head;
@@ -15,6 +18,7 @@ typedef struct flist{
 void init(flist *l){
     l->head = NULL;
 }
+
 
 
 void push(flist *l, node *s){
