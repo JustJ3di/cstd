@@ -21,8 +21,10 @@ int main(int argc, char const *argv[])
     min_st_push(st_min,19);
     min_st_push(st_min, 2);
     min_st_push(st_min, 10);
+    min_st_push(st_min, 1);
+    min_st_push(st_min, 100);
 
-    printf("%d\n\n",st_get_min(st_min));
+    printf("min = %d\n\n",st_get_min(st_min));
 
     vector(int) arr;
     vector_init(arr);
@@ -47,18 +49,20 @@ int main(int argc, char const *argv[])
 
     int a = 2;
     int b = 4;
+    char *c = "example";
     node n1 = {&a, NULL};
     node n2 = {&b, NULL};
+    node n3 = {&c,NULL};
+    
     push(&l,&n1);
 
     push(&l,&n2);
 
+    push(&l, &n3);
 
-    for (node *i = l.head; i; i = i->next)
-    {
-        printf("%d,",get_data(i, int));
-    }
+    printf("%s\n",get_data(&n3,char *));
     
+
 
     return 0;
 }
