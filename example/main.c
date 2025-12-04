@@ -1,8 +1,10 @@
 #include "stack/stack.h"
 #include "vector/vector.h"
 #include "forward_list/forward_list.h"
+#include "ring_queue/r_queue.h"
 
 #include <stdio.h>
+
 
 int main(int argc, char const *argv[])
 {
@@ -62,6 +64,11 @@ int main(int argc, char const *argv[])
 
     printf("%s\n",get_data(&n3,char *));
     
+    rqueue(int,3) rq;
+    rqueue_init(rq);
+    requeue_push(rq,2);
+    requeue_push(rq,1);
+    requeue_push(rq,10);
 
 
     return 0;
