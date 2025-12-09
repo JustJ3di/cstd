@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stddef.h>
+#include <stdarg.h>
 
 
 #define get_data(node,type) *(type *)(node)->p_data
@@ -30,6 +31,22 @@ void pop(flist *l){
     l->head = l->head->next;
 }
 
+
+void mpush(unsigned npush, ...){
+
+    va_list ap;
+    node *s;
+
+    va_start(ap, npush);
+    flist *l = va_arg(ap,flist *);
+    npush--;
+    while (npush--){
+        s = va_arg(ap, node *);
+        push(l, s);
+    }
+    
+    va_end(ap);
+}
 
 void erase(flist *l,node *n){
     if(l->head == n){

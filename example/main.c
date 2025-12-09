@@ -62,7 +62,11 @@ int main(int argc, char const *argv[])
 
     push(&l, &n3);
 
-    printf("%s\n",get_data(&n3,char *));
+    mpush(3,&l,&n1,&n2);
+
+    
+
+    printf("%d\n",get_data(l.head->next,int));
     
     rqueue(int,3) rq;
     rqueue_init(rq);
