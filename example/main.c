@@ -41,7 +41,7 @@ int main(int argc, char const *argv[])
         printf("%d\n",*i);
     }
 
-    
+    printf("Test list\n");
 
     vector_clear(arr);
 
@@ -51,22 +51,22 @@ int main(int argc, char const *argv[])
 
     int a = 2;
     int b = 4;
-    char *c = "example";
+
     node n1 = {&a, NULL};
     node n2 = {&b, NULL};
-    node n3 = {&c,NULL};
+
+    int o = 100;
+    int p  = 120;
+    node n3 = {&o,NULL};
+    node n4 = {&p,NULL};
     
-    push(&l,&n1);
+    mpush(5,&l,&n1,&n2,&n3,&n4);
 
-    push(&l,&n2);
+    for(node *s = l.head; s; s = s->next)
+        printf("%d\n",get_data(s,int));
 
-    push(&l, &n3);
+    printf("end test list\n");
 
-    mpush(3,&l,&n1,&n2);
-
-    
-
-    printf("%d\n",get_data(l.head->next,int));
     
     rqueue(int,3) rq;
     rqueue_init(rq);

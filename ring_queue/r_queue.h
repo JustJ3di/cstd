@@ -7,7 +7,7 @@
 #define requeue_AT(b, i)     ((b).a[i])
 #define requeue_at(b, i)     ((b).a[(i) % requeue_size(b)])
 #define requeue_top(b)      (requeue_a(b, b.h + requeue_size(b) - 1))
-#define requeue_push(b, i) do{ \
+#define requeue_push(b, i) do{\
     (b).a[(b).h] = i;    \
     (b).h = ((b).h + 1) % requeue_size(b);  \
 }while(0)
